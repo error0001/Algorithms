@@ -3,13 +3,18 @@ import os
 #src of material : https://younglinux.info/algorithm
 #Algorithm of finder "SCF" across division
 def Evkl_Division(inA, inB):
-
-  while inA!=0 and inB!=0:
-    if inA > inB:
-        inA = inA % inB
-    else:
-        inB = inB % inA
-  print (inA+inB)
+  a = int(inA)
+  b = int(inB)
+  try:
+    while a!=0 and b!=0:
+      if a > b:
+        a = a % b
+      else:
+        b = b % a
+    print (a+b)
+  except IOError:
+    print("ERROR : PROBLEM WITH VALUES OF INPUT")
+  
 
 if __name__ == '__main__':
   Evkl_Division(input("Enter a: "), input("Enter b: "))

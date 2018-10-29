@@ -26,23 +26,44 @@ def LCM(inA, inB):
     print("switch on always")
 
 
-# url https://younglinux.info/algorithm/bubble
+
 def BubbleSort(inList):
   print("Start bubble sort...")
   print(inList)
   n = 1
+  trash = 0
   if inList != None:
     try:
-      # bubble
+      # bubble  
+      ''' # url https://younglinux.info/algorithm/bubble
       while n < len(inList):
         for i in range( len(inList) - n ):
           if inList[i] > inList[i + 1]:
-            inList[i], inList[i+1] = inList[i+1], inList[i]
+            trash = inList[i]
+            inList[i] = inList[i+1]
+            inList[i+1] = trash
+            #inList[i], inList[i+1] = inList[i+1], inList[i]
         n += 1
+      #output
+      #['32', '53', '2', '300']
+      #['2', '300', '32', '53']
+      '''
+      #buble url wiki
+      for i in range(len(inList)):
+        for j in range(len(inList) - 1, i, - 1):
+          if inList[j] < inList[j - 1]:
+            trash = inList[j]
+            inList[j] = inList[j-1]
+            inList[j-1] = trash
+      print(inList)
+      #output
+      #['20', '1000', '12', '7']
+      #['1000', '12', '20', '7']
     except OSError:
       print("Error, that is bad")
-    finally:
-      print(inList)
+    except IndexError:
+      print("Error, index")
+    #finally:
   else:
     print("Error, list is None")
 
@@ -60,7 +81,7 @@ if __name__ == '__main__':
   #LCM(input("enter a: "), input("enter b: "))
   work_list = []
   cycle = 0
-  while cycle != 10:
+  while cycle != 4:
     work_list.append(input("input max size list:"))
     cycle += 1
   BubbleSort(work_list)

@@ -25,6 +25,27 @@ def LCM(inA, inB):
   finally:
     print("switch on always")
 
+
+# url https://younglinux.info/algorithm/bubble
+def BubbleSort(inList):
+  print("Start bubble sort...")
+  print(inList)
+  n = 1
+  if inList != None:
+    try:
+      # bubble
+      while n < len(inList):
+        for i in range( len(inList) - n ):
+          if inList[i] > inList[i + 1]:
+            inList[i], inList[i+1] = inList[i+1], inList[i]
+        n += 1
+    except OSError:
+      print("Error, that is bad")
+    finally:
+      print(inList)
+  else:
+    print("Error, list is None")
+
 def LCM_P(self):
   try:
     pass
@@ -36,4 +57,10 @@ def LCM_P(self):
     pass
 
 if __name__ == '__main__':
-  LCM(input("enter a: "), input("enter b: "))
+  #LCM(input("enter a: "), input("enter b: "))
+  work_list = []
+  cycle = 0
+  while cycle != 10:
+    work_list.append(input("input max size list:"))
+    cycle += 1
+  BubbleSort(work_list)

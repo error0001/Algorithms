@@ -80,18 +80,48 @@ if __name__ == '__main__':
   #GCD(input("enter a: "), input("enter b: "))
   #task 1: 
   # 1) bubble sort list 
+  
   ls = [1,243,100,54,1234] # list
   print(ls)
   tr = 0  # temp value
   if ls != None:
     for i in range(len(ls)):
       for j in range(len(ls) -1, i,-1):
-        if ls[j] < ls[j-1]:
+        if ls[j] > ls[j-1]: # big -> little
           temp = ls[j]
           ls[j] = ls[j-1]
           ls[j-1] = temp
   print(ls)          
   # 2) find GCD
+  templs = []
+  for x in ls:
+    templs.append(x)
+
+  if templs != None:
+    step = 0
+    try:  
+      listGcd = []    
+      while step < 4:
+        while templs[step]!=0 and templs[step+1]!=0:
+          if templs[step] > templs[step+1]:
+            templs[step] = templs[step] % templs[step + 1]
+          else:
+            templs[step + 1] = templs[step + 1] % templs[step]
+        # The next step is end
+        listGcd.append(templs[step + 1] + templs[step])
+        step += 1
+        # refresh work list
+        templs.clear()
+        for x in ls:
+          templs.append(x)
+        print(step)
+      print("gcd = ", listGcd)
+    except IndexError:
+      print("Error : index")
+      #if i < len(templs) - 1:
+        #print(templs[0] + templs[1])
+        #print(i)
+
 
   '''Bubble Sort
   work_list = []

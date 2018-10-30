@@ -78,6 +78,8 @@ def LCM_P(self):
 
 if __name__ == '__main__':
   #GCD(input("enter a: "), input("enter b: "))
+  
+  '''return after
   #task 1: 
   # 1) bubble sort list 
   
@@ -121,7 +123,7 @@ if __name__ == '__main__':
       #if i < len(templs) - 1:
         #print(templs[0] + templs[1])
         #print(i)
-
+'''
 
   '''Bubble Sort
   work_list = []

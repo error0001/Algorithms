@@ -64,7 +64,7 @@ def BubbleSort(inList):
       print("Error, index")
     #finally:
   else:
-    print("Error, list is None")
+    print("Error, list is None.")  
 
 def LCM_P(self):
   try:
